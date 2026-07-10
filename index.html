@@ -104,11 +104,58 @@
 
   /* ---------- Nutrition-facts signature card ---------- */
   .facts {
+    position: relative;
     border: 2.5px solid var(--ink);
     padding: 14px 16px 16px;
     background: var(--paper);
     font-family: 'Libre Franklin', sans-serif;
     box-shadow: 8px 8px 0 var(--tint);
+  }
+
+  /* Photo badge — a quality-seal stamp clipped to the facts card */
+  .photo-badge {
+    position: absolute;
+    top: -32px;
+    right: -20px;
+    width: 96px;
+    height: 96px;
+    z-index: 2;
+  }
+  .photo-badge .ring {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--turmeric);
+    transform: rotate(-7deg);
+    background: var(--paper);
+  }
+  .photo-badge img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    transform: rotate(7deg) scale(1.18);
+  }
+  .photo-badge .stamp {
+    position: absolute;
+    bottom: -8px; left: 50%;
+    transform: translateX(-50%) rotate(3deg);
+    background: var(--turmeric-deep);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border: 2px solid var(--ink);
+    white-space: nowrap;
+    z-index: 3;
+  }
+  @media (max-width: 760px) {
+    .photo-badge { width: 76px; height: 76px; top: -22px; right: -10px; }
+    .photo-badge .stamp { font-size: 7.5px; padding: 2px 7px; }
   }
   .facts h2 {
     font-family: 'Archivo', sans-serif;
@@ -257,11 +304,17 @@
 
       <!-- Signature element: a personal "Nutrition Facts" card -->
       <aside class="facts" aria-label="Candidate summary, styled as a nutrition facts label">
+        <div class="photo-badge">
+          <div class="ring">
+            <img src="images/headshot.jpg" alt="Photo of Apoorva Nimse">
+          </div>
+          <span class="stamp">QC Approved</span>
+        </div>
         <h2>Candidate Facts</h2>
         <div class="serving">Serving size: 1 food scientist<br>Servings per team: unlimited</div>
-        <div class="row bold"><span>Experience</span><span class="amount">5+ yrs</span></div>
-        <div class="row sub"><span>CPG product development</span><span class="amount">1.5 yrs</span></div>
+        <div class="row bold"><span>Experience</span><span class="amount">1.5 yrs</span></div>
         <div class="row bold"><span>Benchtop efficiency gained</span><span class="amount">+80%</span></div>
+        <div class="row bold"><span>Shelf-life extended</span><span class="amount">2.7×</span></div>
         <div class="row bold"><span>Prototypes developed</span><span class="amount">10+</span></div>
         <div class="row bold"><span>Food safety</span><span class="amount">FDA · Six Sigma</span></div>
         <div class="row"><span>Curiosity</span><span class="amount">100% DV</span></div>
@@ -284,7 +337,7 @@
           <h3>Research &amp; Development Technologist</h3>
           <p class="org">Banza — New York, NY</p>
           <ul>
-            <li>Own 3 concurrent R&amp;D innovation projects, leading benchwork, supporting trial planning, and coordinating prototype testing from concept through execution.</li>
+            <li>Owned 3 concurrent R&amp;D innovation projects by leading benchwork, supporting R&amp;D trial planning, and coordinating prototype testing from concept through execution.</li>
             <li>Increased benchtop testing efficiency by 80% by creating new internal product testing methods and standardized workflows.</li>
             <li>Built a prototype lab database management system with a full project brief to improve R&amp;D documentation, traceability, and knowledge access.</li>
             <li>Collaborated cross-functionally with Consumer Insights, Quality, Operations, and external partners to troubleshoot product and process challenges and translate benchtop learnings into scalable manufacturing solutions.</li>
@@ -422,7 +475,7 @@
       </div>
       <div class="contact-grid">
         <p style="max-width: 42ch;">
-          Open to food scientist, associate scientist, and R&amp;D roles in the New Jersey area.
+          Open to food scientist, associate scientist, and R&amp;D roles anywhere, with a preference for the New York City area.
           The fastest way to reach me is email — I typically reply within a day.
         </p>
         <ul class="contact-list">
