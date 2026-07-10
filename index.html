@@ -35,7 +35,7 @@
 
   a { color: var(--turmeric-deep); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
   a:hover { color: var(--ink); }
-  a:focus-visible, button:focus-visible {
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
     outline: 3px solid var(--turmeric);
     outline-offset: 2px;
   }
@@ -266,6 +266,48 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
   }
+
+  .msg-form { max-width: 480px; margin-top: 48px; padding-top: 32px; border-top: 4px solid var(--rule); }
+  .msg-form h3 {
+    font-family: 'Archivo', sans-serif;
+    font-variation-settings: 'wdth' 115;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+  }
+  .msg-form .hint { color: var(--gray); font-size: 0.9rem; margin-bottom: 18px; }
+  .msg-form label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 6px;
+  }
+  .msg-form .field { margin-bottom: 16px; }
+  .msg-form input[type="text"],
+  .msg-form input[type="email"],
+  .msg-form textarea {
+    width: 100%;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1rem;
+    padding: 11px 13px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+  }
+  .msg-form button {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px; letter-spacing: 0.04em;
+    padding: 13px 22px;
+    border: 2px solid var(--ink);
+    cursor: pointer;
+    background: var(--ink);
+    color: var(--paper);
+    transition: background 0.15s ease;
+  }
+  .msg-form button:hover { background: var(--turmeric-deep); border-color: var(--turmeric-deep); }
+  .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
   footer {
     border-top: 8px solid var(--rule);
@@ -517,6 +559,30 @@
           <img src="images/qr-connect.png" alt="QR code linking to Apoorva's digital business card" width="128" height="128">
           <span>Scan to connect</span>
         </a>
+      </div>
+
+      <div class="msg-form">
+        <h3>Or Leave a Note</h3>
+        <p class="hint">Have a question or just want to say hi? Drop it here — it goes straight to my inbox.</p>
+        <form action="https://formsubmit.co/apoorva.nimse1111@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from apoorva-nimse.github.io">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://apoorva-nimse.github.io/thanks.html">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+          <div class="field">
+            <label for="m-name">Name</label>
+            <input type="text" id="m-name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="m-email">Your Email</label>
+            <input type="email" id="m-email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="m-message">Message</label>
+            <textarea id="m-message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
   </section>

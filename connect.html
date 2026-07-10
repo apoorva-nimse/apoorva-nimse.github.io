@@ -34,7 +34,7 @@
     flex-direction: column;
   }
   a { color: var(--turmeric-deep); }
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 2px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 2px; }
 
   header { padding: 22px 24px; text-align: center; }
   header a {
@@ -142,6 +142,55 @@
   .facts .row span:last-child { font-weight: 600; text-align: right; word-break: break-word; }
   .facts .row:last-of-type { border-bottom: none; }
 
+  .msg-form {
+    text-align: left;
+    border-top: 6px solid var(--ink);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  .msg-form h2 {
+    font-family: 'Archivo', sans-serif;
+    font-variation-settings: 'wdth' 120;
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .msg-form .hint { color: var(--gray); font-size: 0.85rem; margin-bottom: 16px; }
+  .msg-form label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 6px;
+  }
+  .msg-form .field { margin-bottom: 14px; }
+  .msg-form input[type="text"],
+  .msg-form input[type="email"],
+  .msg-form textarea {
+    width: 100%;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+  }
+  .msg-form button {
+    width: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px; letter-spacing: 0.04em;
+    padding: 14px 20px;
+    border: 2px solid var(--ink);
+    cursor: pointer;
+    background: var(--ink);
+    color: var(--paper);
+    transition: background 0.15s ease;
+  }
+  .msg-form button:hover { background: var(--turmeric-deep); }
+  .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
   .back-link { margin-top: 26px; }
   .back-link a {
     font-family: 'IBM Plex Mono', monospace;
@@ -189,6 +238,30 @@
       <div class="row"><span>Location</span><span>New Jersey</span></div>
       <div class="row"><span>Response time</span><span>&lt; 24 hrs</span></div>
     </aside>
+
+    <div class="msg-form">
+      <h2>Or Leave a Note</h2>
+      <p class="hint">Have a question or just want to say hi? Drop it here — it goes straight to my inbox.</p>
+      <form action="https://formsubmit.co/apoorva.nimse1111@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from apoorva-nimse.github.io/connect">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://apoorva-nimse.github.io/thanks.html">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+        <div class="field">
+          <label for="c-name">Name</label>
+          <input type="text" id="c-name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="c-email">Your Email</label>
+          <input type="email" id="c-email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
 
     <p class="back-link"><a href="index.html">View full portfolio &rarr;</a></p>
   </div>
