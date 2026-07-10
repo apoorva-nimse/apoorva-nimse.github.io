@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect with Apoorva Nimse</title>
+<meta name="description" content="Scan or tap to connect with Apoorva Nimse, food scientist — save her contact, send an email, or view her portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #141412;
+    --paper: #FFFFFF;
+    --tint: #F5F4F0;
+    --turmeric: #C97B10;
+    --turmeric-deep: #9A5D08;
+    --gray: #6B6B66;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    font-family: 'Libre Franklin', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--tint);
+    line-height: 1.6;
+    font-size: 17px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: var(--turmeric-deep); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 2px; }
+
+  header { padding: 22px 24px; text-align: center; }
+  header a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+  }
+  header a:hover { color: var(--turmeric-deep); text-decoration: underline; }
+
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 16px 20px 48px; }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--paper);
+    border: 2.5px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--turmeric);
+    padding: 76px 28px 32px;
+    position: relative;
+    text-align: center;
+  }
+
+  .photo-wrap {
+    position: absolute;
+    top: -84px; left: 50%;
+    transform: translateX(-50%);
+    width: 168px; height: 168px;
+  }
+  .photo-wrap .ring {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--ink);
+    box-shadow: 7px 7px 0 var(--turmeric);
+    transform: rotate(-5deg);
+    background: var(--tint);
+  }
+  .photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+    transform: rotate(5deg) scale(1.15);
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--turmeric-deep);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Archivo', sans-serif;
+    font-variation-settings: 'wdth' 115;
+    font-weight: 800;
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    text-wrap: balance;
+  }
+  .lede {
+    color: var(--gray);
+    font-size: 1rem;
+    max-width: 34ch;
+    margin: 0 auto 28px;
+  }
+
+  .cta-row { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .btn {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px; letter-spacing: 0.04em;
+    padding: 14px 20px;
+    border: 2px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--paper);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn.primary:hover { background: var(--turmeric-deep); border-color: var(--turmeric-deep); }
+  .btn:hover { background: var(--tint); }
+
+  .facts {
+    text-align: left;
+    border-top: 6px solid var(--ink);
+    padding-top: 16px;
+    font-family: 'Libre Franklin', sans-serif;
+  }
+  .facts h2 {
+    font-family: 'Archivo', sans-serif;
+    font-variation-settings: 'wdth' 120;
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .facts .row {
+    display: flex; justify-content: space-between; gap: 12px;
+    font-size: 0.85rem;
+    padding: 7px 0;
+    border-bottom: 1px solid #DDD;
+  }
+  .facts .row span:first-child { color: var(--gray); }
+  .facts .row span:last-child { font-weight: 600; text-align: right; word-break: break-word; }
+  .facts .row:last-of-type { border-bottom: none; }
+
+  .back-link { margin-top: 26px; }
+  .back-link a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px; text-decoration: none;
+  }
+  .back-link a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--gray);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">&larr; A. Nimse — Portfolio</a>
+</header>
+
+<main>
+  <div class="card">
+    <div class="photo-wrap">
+      <div class="ring">
+        <img src="images/headshot.jpg" alt="Photo of Apoorva Nimse">
+      </div>
+    </div>
+
+    <p class="eyebrow">Food Scientist · New Jersey</p>
+    <h1>Let's&nbsp;Connect</h1>
+    <p class="lede">Always happy to talk formulation, sensory science, or your next favorite snack.</p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="apoorva-nimse.vcf" download>Save My Contact</a>
+      <a class="btn" href="mailto:apoorva.nimse1111@gmail.com">Email Me</a>
+      <a class="btn" href="https://www.linkedin.com/in/apoorva-nimse">Connect on LinkedIn</a>
+    </div>
+
+    <aside class="facts" aria-label="Connect details">
+      <h2>Connect Facts</h2>
+      <div class="row"><span>Email</span><span>apoorva.nimse1111@gmail.com</span></div>
+      <div class="row"><span>LinkedIn</span><span>/in/apoorva-nimse</span></div>
+      <div class="row"><span>Location</span><span>New Jersey</span></div>
+      <div class="row"><span>Response time</span><span>&lt; 24 hrs</span></div>
+    </aside>
+
+    <p class="back-link"><a href="index.html">View full portfolio &rarr;</a></p>
+  </div>
+</main>
+
+<footer>© 2026 Apoorva Nimse</footer>
+
+</body>
+</html>

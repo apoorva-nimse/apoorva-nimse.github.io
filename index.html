@@ -103,59 +103,61 @@
   .btn:hover { background: var(--tint); color: var(--ink); }
 
   /* ---------- Nutrition-facts signature card ---------- */
+  .id-card { display: flex; flex-direction: column; align-items: center; }
   .facts {
     position: relative;
+    width: 100%;
     border: 2.5px solid var(--ink);
-    padding: 14px 16px 16px;
+    padding: 68px 16px 16px;
     background: var(--paper);
     font-family: 'Libre Franklin', sans-serif;
     box-shadow: 8px 8px 0 var(--tint);
   }
 
-  /* Photo badge — a quality-seal stamp clipped to the facts card */
+  /* Photo badge — large portrait overlapping the top of the facts card, like a profile photo on a spec sheet */
   .photo-badge {
-    position: absolute;
-    top: -32px;
-    right: -20px;
-    width: 96px;
-    height: 96px;
+    position: relative;
+    width: 176px;
+    height: 176px;
+    margin-bottom: -60px;
     z-index: 2;
   }
   .photo-badge .ring {
     width: 100%; height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--ink);
-    box-shadow: 6px 6px 0 var(--turmeric);
-    transform: rotate(-7deg);
+    border: 5px solid var(--ink);
+    box-shadow: 7px 7px 0 var(--turmeric);
+    transform: rotate(-5deg);
     background: var(--paper);
   }
   .photo-badge img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 18%;
     display: block;
-    transform: rotate(7deg) scale(1.18);
+    transform: rotate(5deg) scale(1.15);
   }
   .photo-badge .stamp {
     position: absolute;
-    bottom: -8px; left: 50%;
-    transform: translateX(-50%) rotate(3deg);
+    top: -8px; right: -6px;
+    transform: rotate(6deg);
     background: var(--turmeric-deep);
     color: var(--paper);
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 8.5px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 3px 9px;
+    padding: 4px 10px;
     border: 2px solid var(--ink);
     white-space: nowrap;
     z-index: 3;
   }
   @media (max-width: 760px) {
-    .photo-badge { width: 76px; height: 76px; top: -22px; right: -10px; }
-    .photo-badge .stamp { font-size: 7.5px; padding: 2px 7px; }
+    .photo-badge { width: 144px; height: 144px; margin-bottom: -48px; }
+    .facts { padding-top: 56px; }
+    .photo-badge .stamp { font-size: 9px; padding: 3px 8px; }
   }
   .facts h2 {
     font-family: 'Archivo', sans-serif;
@@ -248,6 +250,23 @@
   .contact-list li { padding: 14px 0; border-bottom: 1px solid #DDD; display: flex; gap: 16px; }
   .contact-list .k { color: var(--gray); min-width: 90px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
 
+  .qr-row { display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
+  .qr-card {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    padding: 18px;
+    background: var(--tint);
+    border: 2px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.15s ease;
+  }
+  .qr-card:hover { background: var(--paper); color: var(--ink); }
+  .qr-card img { display: block; width: 112px; height: 112px; background: var(--paper); padding: 6px; border: 1px solid var(--ink); }
+  .qr-card span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
   footer {
     border-top: 8px solid var(--rule);
     padding: 28px 0 40px;
@@ -279,6 +298,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="connect.html">Connect</a></li>
       </ul>
     </nav>
   </div>
@@ -302,14 +322,15 @@
         </div>
       </div>
 
-      <!-- Signature element: a personal "Nutrition Facts" card -->
-      <aside class="facts" aria-label="Candidate summary, styled as a nutrition facts label">
+      <!-- Signature element: a personal "Nutrition Facts" card, topped with a portrait -->
+      <div class="id-card">
         <div class="photo-badge">
           <div class="ring">
             <img src="images/headshot.jpg" alt="Photo of Apoorva Nimse">
           </div>
           <span class="stamp">QC Approved</span>
         </div>
+        <aside class="facts" aria-label="Candidate summary, styled as a nutrition facts label">
         <h2>Candidate Facts</h2>
         <div class="serving">Serving size: 1 food scientist<br>Servings per team: unlimited</div>
         <div class="row bold"><span>Experience</span><span class="amount">1.5 yrs</span></div>
@@ -319,7 +340,8 @@
         <div class="row bold"><span>Food safety</span><span class="amount">FDA · Six Sigma</span></div>
         <div class="row"><span>Curiosity</span><span class="amount">100% DV</span></div>
         <p class="footnote">* Daily Values based on a fast-paced R&amp;D environment. Contains: chemistry, sensory science, and an unreasonable number of benchtop samples.</p>
-      </aside>
+        </aside>
+      </div>
     </div>
 
   </div>
@@ -484,6 +506,17 @@
           <li><span class="k">CV</span> <a href="resume.pdf" download>resume.pdf</a></li>
           <li><span class="k">Location</span> <span>New Jersey</span></li>
         </ul>
+      </div>
+
+      <div class="qr-row">
+        <a class="qr-card" href="index.html">
+          <img src="images/qr-website.png" alt="QR code linking to this portfolio site" width="128" height="128">
+          <span>Scan for portfolio</span>
+        </a>
+        <a class="qr-card" href="connect.html">
+          <img src="images/qr-connect.png" alt="QR code linking to Apoorva's digital business card" width="128" height="128">
+          <span>Scan to connect</span>
+        </a>
       </div>
     </div>
   </section>
