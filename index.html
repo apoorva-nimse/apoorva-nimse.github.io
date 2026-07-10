@@ -10,13 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #141412;
+    --ink: #2D2A33;
     --paper: #FFFFFF;
-    --tint: #F5F4F0;
-    --turmeric: #C97B10;
-    --turmeric-deep: #9A5D08;
-    --rule: #141412;
-    --gray: #6B6B66;
+    --tint: #F3ECF9;
+    --lilac: #A888B4;
+    --turmeric: #D0B8E8;
+    --turmeric-deep: #3B1E54;
+    --rule: #3B1E54;
+    --gray: #6B6472;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -36,7 +37,7 @@
   a { color: var(--turmeric-deep); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
   a:hover { color: var(--ink); }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    outline: 3px solid var(--turmeric);
+    outline: 3px solid var(--turmeric-deep);
     outline-offset: 2px;
   }
 
@@ -92,14 +93,14 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px; letter-spacing: 0.04em;
     padding: 13px 22px;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--turmeric-deep);
     text-decoration: none;
-    color: var(--ink);
+    color: var(--turmeric-deep);
     background: var(--paper);
     transition: background 0.15s ease, color 0.15s ease;
   }
-  .btn.primary { background: var(--ink); color: var(--paper); }
-  .btn.primary:hover { background: var(--turmeric-deep); border-color: var(--turmeric-deep); }
+  .btn.primary { background: var(--turmeric-deep); color: var(--paper); }
+  .btn.primary:hover { background: var(--ink); border-color: var(--ink); }
   .btn:hover { background: var(--tint); color: var(--ink); }
 
   /* ---------- Nutrition-facts signature card ---------- */
@@ -107,11 +108,11 @@
   .facts {
     position: relative;
     width: 100%;
-    border: 2.5px solid var(--ink);
+    border: 2.5px solid var(--turmeric-deep);
     padding: 100px 16px 16px;
     background: var(--paper);
     font-family: 'Libre Franklin', sans-serif;
-    box-shadow: 8px 8px 0 var(--tint);
+    box-shadow: 8px 8px 0 var(--turmeric);
   }
 
   /* Photo badge — large portrait overlapping the top of the facts card, like a profile photo on a spec sheet */
@@ -126,7 +127,7 @@
     width: 100%; height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid var(--ink);
+    border: 5px solid var(--turmeric-deep);
     box-shadow: 7px 7px 0 var(--turmeric);
     transform: rotate(-5deg);
     background: var(--paper);
@@ -150,7 +151,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 4px 10px;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--turmeric-deep);
     white-space: nowrap;
     z-index: 3;
   }
@@ -166,13 +167,13 @@
     font-size: 1.9rem;
     line-height: 1;
     letter-spacing: -0.01em;
-    border-bottom: 10px solid var(--ink);
+    border-bottom: 10px solid var(--turmeric-deep);
     padding-bottom: 8px;
     margin-bottom: 6px;
   }
   .facts .serving {
     font-size: 0.85rem;
-    border-bottom: 4px solid var(--ink);
+    border-bottom: 4px solid var(--lilac);
     padding-bottom: 6px;
     margin-bottom: 6px;
   }
@@ -180,11 +181,11 @@
     display: flex; justify-content: space-between;
     font-size: 0.88rem;
     padding: 5px 0;
-    border-bottom: 1px solid var(--ink);
+    border-bottom: 1px solid var(--lilac);
   }
   .facts .row.bold { font-weight: 600; }
-  .facts .row.sub { padding-left: 16px; font-size: 0.84rem; color: #333; }
-  .facts .row:last-of-type { border-bottom: 6px solid var(--ink); }
+  .facts .row.sub { padding-left: 16px; font-size: 0.84rem; color: var(--ink); }
+  .facts .row:last-of-type { border-bottom: 6px solid var(--turmeric-deep); }
   .facts .footnote {
     font-size: 0.72rem;
     color: var(--gray);
@@ -215,7 +216,7 @@
 
   /* Experience */
   .job { display: grid; grid-template-columns: 180px 1fr; gap: 28px; padding: 28px 0; }
-  .job + .job { border-top: 1px solid #DDD; }
+  .job + .job { border-top: 1px solid var(--lilac); }
   .job .when {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px; color: var(--gray);
@@ -224,11 +225,11 @@
   .job h3 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 2px; }
   .job .org { color: var(--turmeric-deep); font-weight: 600; margin-bottom: 10px; }
   .job ul { list-style: none; }
-  .job li { padding-left: 20px; position: relative; margin-bottom: 8px; color: #333; }
-  .job li::before { content: "•"; position: absolute; left: 4px; color: var(--turmeric); font-weight: 700; }
+  .job li { padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--ink); }
+  .job li::before { content: "•"; position: absolute; left: 4px; color: var(--turmeric-deep); font-weight: 700; }
 
   /* Skills */
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); border: 2px solid var(--ink); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--turmeric-deep); border: 2px solid var(--turmeric-deep); }
   .skill-cell { background: var(--paper); padding: 24px; }
   .skill-cell h3 {
     font-family: 'IBM Plex Mono', monospace;
@@ -237,35 +238,18 @@
     margin-bottom: 14px;
   }
   .skill-cell ul { list-style: none; }
-  .skill-cell li { font-size: 0.95rem; margin-bottom: 7px; color: #333; }
+  .skill-cell li { font-size: 0.95rem; margin-bottom: 7px; color: var(--ink); }
 
   /* Projects */
   .project { background: var(--tint); padding: 28px; margin-bottom: 18px; border-left: 6px solid var(--turmeric); }
   .project h3 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 8px; }
-  .project p { color: #333; font-size: 0.98rem; }
+  .project p { color: var(--ink); font-size: 0.98rem; }
 
   /* Contact */
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
   .contact-list { list-style: none; font-family: 'IBM Plex Mono', monospace; font-size: 15px; }
-  .contact-list li { padding: 14px 0; border-bottom: 1px solid #DDD; display: flex; gap: 16px; }
+  .contact-list li { padding: 14px 0; border-bottom: 1px solid var(--lilac); display: flex; gap: 16px; }
   .contact-list .k { color: var(--gray); min-width: 90px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
-
-  .qr-row { display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
-  .qr-card {
-    display: flex; flex-direction: column; align-items: center; gap: 12px;
-    padding: 18px;
-    background: var(--tint);
-    border: 2px solid var(--ink);
-    text-decoration: none;
-    color: var(--ink);
-    transition: background 0.15s ease;
-  }
-  .qr-card:hover { background: var(--paper); color: var(--ink); }
-  .qr-card img { display: block; width: 112px; height: 112px; background: var(--paper); padding: 6px; border: 1px solid var(--ink); }
-  .qr-card span {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
-  }
 
   .msg-form { max-width: 480px; margin-top: 48px; padding-top: 32px; border-top: 4px solid var(--rule); }
   .msg-form h3 {
@@ -291,7 +275,7 @@
     font-family: 'Libre Franklin', sans-serif;
     font-size: 1rem;
     padding: 11px 13px;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--lilac);
     background: var(--paper);
     color: var(--ink);
     resize: vertical;
@@ -300,13 +284,13 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px; letter-spacing: 0.04em;
     padding: 13px 22px;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--turmeric-deep);
     cursor: pointer;
-    background: var(--ink);
+    background: var(--turmeric-deep);
     color: var(--paper);
     transition: background 0.15s ease;
   }
-  .msg-form button:hover { background: var(--turmeric-deep); border-color: var(--turmeric-deep); }
+  .msg-form button:hover { background: var(--ink); border-color: var(--ink); }
   .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
   footer {
@@ -548,17 +532,6 @@
           <li><span class="k">CV</span> <a href="resume.pdf" download>resume.pdf</a></li>
           <li><span class="k">Location</span> <span>New Jersey</span></li>
         </ul>
-      </div>
-
-      <div class="qr-row">
-        <a class="qr-card" href="index.html">
-          <img src="images/qr-website.png" alt="QR code linking to this portfolio site" width="128" height="128">
-          <span>Scan for portfolio</span>
-        </a>
-        <a class="qr-card" href="connect.html">
-          <img src="images/qr-connect.png" alt="QR code linking to Apoorva's digital business card" width="128" height="128">
-          <span>Scan to connect</span>
-        </a>
       </div>
 
       <div class="msg-form">

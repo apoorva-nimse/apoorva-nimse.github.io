@@ -10,12 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #141412;
+    --ink: #2D2A33;
     --paper: #FFFFFF;
-    --tint: #F5F4F0;
-    --turmeric: #C97B10;
-    --turmeric-deep: #9A5D08;
-    --gray: #6B6B66;
+    --tint: #F3ECF9;
+    --turmeric: #D0B8E8;
+    --turmeric-deep: #3B1E54;
+    --gray: #6B6472;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -31,12 +31,12 @@
     font-size: 17px;
   }
   a { color: var(--turmeric-deep); }
-  a:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 2px; }
+  a:focus-visible { outline: 3px solid var(--turmeric-deep); outline-offset: 2px; }
   .card {
     width: 100%;
     max-width: 420px;
     background: var(--paper);
-    border: 2.5px solid var(--ink);
+    border: 2.5px solid var(--turmeric-deep);
     box-shadow: 10px 10px 0 var(--turmeric);
     padding: 40px 32px;
     text-align: center;
@@ -67,14 +67,14 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px; letter-spacing: 0.04em;
     padding: 14px 20px;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--turmeric-deep);
     text-decoration: none;
-    color: var(--ink);
+    color: var(--turmeric-deep);
     background: var(--paper);
     transition: background 0.15s ease, color 0.15s ease;
   }
-  .btn.primary { background: var(--ink); color: var(--paper); }
-  .btn.primary:hover { background: var(--turmeric-deep); border-color: var(--turmeric-deep); }
+  .btn.primary { background: var(--turmeric-deep); color: var(--paper); }
+  .btn.primary:hover { background: var(--ink); border-color: var(--ink); }
   .btn:hover { background: var(--tint); }
 </style>
 </head>
